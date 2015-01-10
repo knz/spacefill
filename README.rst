@@ -1,6 +1,24 @@
 The accompanying file "spacefill.py" is both a Python library and
-command-line utility to generate Hilbert and Moore space-filling
-curves.
+command-line utility to generate **space-filling curves** in
+configurable coordinate systems.
+
+For now the program supports both Hilbert__ (endpoints on the side)
+and Moore__ (closed loop) curves.
+
+.. __: https://en.wikipedia.org/wiki/Hilbert_curve
+.. __: https://en.wikipedia.org/wiki/Moore_curve
+
+`Space-filling curves`__ can be used for network layouts or job
+scheduling as they have good locality-preserving properties: two
+points with a close linear (1D) value are also close to each other in
+the 2D space.
+
+.. __: https://en.wikipedia.org/wiki/Space-filling_curve
+
+The popular `XKCD Map of the Internet`__ is another example
+application of Hilbert curves.
+
+.. __: https://xkcd.com/195/
 
 Example uses from the command line
 ==================================
