@@ -66,7 +66,7 @@ counter-clockwise::
 
 .. image:: hilbert4-rotated.png
 
-Command-line argument::
+Command-line API::
 
     $ ./spacefill.py --help
     usage: spacefill.py [-h] [--output OUTPUT] [--type TYPE] [--gnuplot [TERM]]
@@ -121,37 +121,28 @@ API, example use from Python
     0.75 0.75
     0.75 0.25
 
-    >>> help(spacefill)
-    Help on module spacefill:
+Function documentation::
 
-    NAME
-        spacefill
+  hilbert(n, x0, y0, xi, xj, yi, yj)
+      Generate a Hilbert curve.
 
-    DESCRIPTION
-        # Hilbert and Moore curve generators.
-        # Requires Python 3.3+.
+      This function returns a generator that yields the (x,y) coordinates
+      of the Hilbert curve points from 0 to 4^n-1.
 
-    FUNCTIONS
-        hilbert(n, x0, y0, xi, xj, yi, yj)
-            Generate a Hilbert curve.
+      Arguments:
+      n      -- the base-4 logarithm of the number of points (ie. the function generates 4^n points).
+      x0, y0 -- offset to add to all generated point coordinates.
+      xi, yi -- projection-plane coordinates of the curve's I vector (i.e. horizontal, "X" axis).
+      xj, yj -- projection-plane coordinates of the curve's J vector (i.e. vertical, "Y" axis).
 
-            This function returns a generator that yields the (x,y) coordinates
-            of the Hilbert curve points from 0 to 4^n-1.
+  moore(n, x0, y0, xi, xj, yi, yj)
+      Generate a Moore curve.
 
-            Arguments:
-            n      -- the base-4 logarithm of the number of points (ie. the function generates 4^n points).
-            x0, y0 -- offset to add to all generated point coordinates.
-            xi, yi -- projection-plane coordinates of the curve's I vector (i.e. horizontal, "X" axis).
-            xj, yj -- projection-plane coordinates of the curve's J vector (i.e. vertical, "Y" axis).
+      This function returns a generator that yields the (x,y) coordinates
+      of the Moore curve points from 0 to 4^n-1.
 
-        moore(n, x0, y0, xi, xj, yi, yj)
-            Generate a Moore curve.
-
-            This function returns a generator that yields the (x,y) coordinates
-            of the Moore curve points from 0 to 4^n-1.
-
-            Arguments:
-            n      -- the base-4 logarithm of the number of points (ie. the function generates 4^n points).
-            x0, y0 -- offset to add to all generated point coordinates.
-            xi, yi -- projection-plane coordinates of the curve's I vector (i.e. horizontal, "X" axis).
-            xj, yj -- projection-plane coordinates of the curve's J vector (i.e. vertical, "Y" axis).
+      Arguments:
+      n      -- the base-4 logarithm of the number of points (ie. the function generates 4^n points).
+      x0, y0 -- offset to add to all generated point coordinates.
+      xi, yi -- projection-plane coordinates of the curve's I vector (i.e. horizontal, "X" axis).
+      xj, yj -- projection-plane coordinates of the curve's J vector (i.e. vertical, "Y" axis).
